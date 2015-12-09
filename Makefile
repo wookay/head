@@ -24,7 +24,8 @@ golang:
 	  cd golang && git clone git@github.com:golang/go.git ;\
 	fi
 	cd golang/go && git pull
-	export GOROOT_BOOTSTRAP=$(pwd)/golang/go1.4 && cd golang/go/src && GOOS=darwin GOARCH=amd64 ./bootstrap.bash
+	rm -rf golang/go-darwin-amd64-bootstrap
+	GOROOT_BOOTSTRAP="$(CURDIR)/golang/go1.4" && cd golang/go/src && GOOS=darwin GOARCH=amd64 ./bootstrap.bash
 	@echo
 
 swiftlang:
@@ -52,5 +53,6 @@ swiftlang:
 	cd swiftlang/swift-corelibs-xctest && git pull
 	cd swiftlang/swift-corelibs-foundation && git pull
 	cd swiftlang/ninja && git pull
-	cd swiftlang/swift && utils/build-script -t
+	cd swiftlang/swift && utils/build-script
+	#cd swiftlang/swift && utils/build-script -t
 	@echo
