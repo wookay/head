@@ -6,8 +6,8 @@ all: julialang golang swiftlang
 julialang:
 	@if [ ! -d "julialang" ] ;\
 	then \
-		mkdir julialang ;\
-		cd julialang && git clone git@github.com:JuliaLang/julia.git ;\
+	  mkdir julialang ;\
+	  cd julialang && git clone git@github.com:JuliaLang/julia.git ;\
 	fi
 	cd julialang/julia && git pull
 	cd julialang/julia && make
@@ -16,7 +16,7 @@ julialang:
 golang:
 	@if [ ! -d "golang" ] ;\
 	then \
-		mkdir -p golang/go1.4 ;\
+	  mkdir -p golang/go1.4 ;\
 	  wget https://storage.googleapis.com/golang/go1.4.3.darwin-amd64.tar.gz ;\
 	  tar xvzf go1.4.3.darwin-amd64.tar.gz -C golang/go1.4 --strip-components=1 ;\
 	  rm go1.4.3.darwin-amd64.tar.gz ;\
@@ -29,7 +29,7 @@ golang:
 swiftlang:
 	@if [ ! -d "swiftlang" ] ;\
 	then \
-		mkdir swiftlang ;\
+	  mkdir swiftlang ;\
 	  cd swiftlang && git clone git@github.com:apple/swift.git swift ;\
 	  cd swiftlang && git clone git@github.com:apple/swift-llvm.git llvm ;\
 	  cd swiftlang && git clone git@github.com:apple/swift-clang.git clang ;\
