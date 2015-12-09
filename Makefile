@@ -32,16 +32,16 @@ swiftlang:
 	@if [ ! -d "swiftlang" ] ;\
 	then \
 	  mkdir swiftlang ;\
-	  cd swiftlang && git clone git@github.com:apple/swift.git swift ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-llvm.git llvm ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-clang.git clang ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-lldb.git lldb ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-cmark.git cmark ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-llbuild.git llbuild ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-package-manager.git swiftpm ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-corelibs-xctest.git ;\
-	  cd swiftlang && git clone git@github.com:apple/swift-corelibs-foundation.git ;\
-	  cd swiftlang && git clone git@github.com:ninja-build/ninja.git ;\
+	  git clone git@github.com:apple/swift.git swiftlang/swift ;\
+	  git clone git@github.com:apple/swift-llvm.git swiftlang/llvm ;\
+	  git clone git@github.com:apple/swift-clang.git swiftlang/clang ;\
+	  git clone git@github.com:apple/swift-lldb.git swiftlang/lldb ;\
+	  git clone git@github.com:apple/swift-cmark.git swiftlang/cmark ;\
+	  git clone git@github.com:apple/swift-llbuild.git swiftlang/llbuild ;\
+	  git clone git@github.com:apple/swift-package-manager.git swiftlang/swiftpm ;\
+	  git clone git@github.com:apple/swift-corelibs-xctest.git swiftlang/swift-corelibs-xctest;\
+	  git clone git@github.com:apple/swift-corelibs-foundation.git swiftlang/swift-corelibs-foundation ;\
+	  git clone git@github.com:ninja-build/ninja.git swiftlang/ninja ;\
 	fi
 	cd swiftlang/swift && git pull
 	cd swiftlang/llvm && git pull
