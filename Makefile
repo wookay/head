@@ -17,13 +17,14 @@ golang:
 	@if [ ! -d "golang" ] ;\
 	then \
 	  mkdir -p golang/go1.4 ;\
+	  wget --version | head -n 1 ;\
 	  wget https://storage.googleapis.com/golang/go1.4.3.darwin-amd64.tar.gz ;\
 	  tar xvzf go1.4.3.darwin-amd64.tar.gz -C golang/go1.4 --strip-components=1 ;\
 	  rm go1.4.3.darwin-amd64.tar.gz ;\
 	  cd golang && git clone git@github.com:golang/go.git ;\
 	fi
 	cd golang/go && git pull
-	cd golang/go/src && GOOS=darwin GOARCH=amd64 ./bootstrap.bash
+	export GOROOT_BOOTSTRAP=$(pwd)/golang/go1.4 && cd golang/go/src && GOOS=darwin GOARCH=amd64 ./bootstrap.bash
 	@echo
 
 swiftlang:
